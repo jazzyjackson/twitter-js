@@ -9,7 +9,7 @@ function add (name, content, id) {
 
 function list () {
   uniques();
-  return _.cloneDeep(data);
+  return data;
 }
 
 function uniques (){
@@ -17,12 +17,12 @@ function uniques (){
   console.log(data);
 
   data.forEach(function(o){
-    console.log(o)
-   // uniqueNames.push(o.name);
-/*     if(!uniqueNames.includes(o.name)){
+   // console.log(o)
+ //   uniqueNames.push(o.name);
+  if(_.indexOf(uniqueNames, o.name) === -1){
       uniqueNames.push(o.name);
       console.log(o.name);
-    } */
+  }
   })
   console.log(uniqueNames.length);
   data.uniques = uniqueNames.length;
