@@ -57,3 +57,19 @@ code {
 .content .by {
   font-weight: bold;
 }
+
+.atwit {
+  list-style: none;
+  padding: 2px;
+  padding-top: 0;
+  margin: 5px;
+  border: 1px solid #ddd;
+
+}
+
+.atwit h5 {
+  margin-top: 0;
+  font-size: .9em;
+    background-color: #Dcc;
+
+}
