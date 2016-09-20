@@ -11,6 +11,7 @@ app.engine('html', nunjucks.render);
 
 app.use(volleyball);
 app.use('/', routes);
+app.use(express.static('public'));
 
 
 
