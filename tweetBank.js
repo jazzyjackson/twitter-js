@@ -2,19 +2,40 @@ var _ = require('lodash');
 
 var data = [];
 
-function add (name, content) {
+function add (name, content, id) {
   data.push({ name: name, content: content });
+  console.log(name);
 }
 
 function list () {
+  uniques();
   return _.cloneDeep(data);
 }
 
+function uniques (){
+  var uniqueNames = [];
+  console.log(data);
+
+  data.forEach(function(o){
+    console.log(o)
+   // uniqueNames.push(o.name);
+/*     if(!uniqueNames.includes(o.name)){
+      uniqueNames.push(o.name);
+      console.log(o.name);
+    } */
+  })
+  console.log(uniqueNames.length);
+  data.uniques = uniqueNames.length;
+
+}
+
+
 function find (properties) {
+  console.log(data);
   return _.cloneDeep(_.filter(data, properties));
 }
 
-module.exports = { add: add, list: list, find: find };
+module.exports = { add: add, list: list, find: find , uniques: uniques};
 
 var randArrayEl = function(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -31,6 +52,6 @@ var getFakeTweet = function() {
   return "Fullstack Academy is " + randArrayEl(awesome_adj) + "! The instructors are just so " + randArrayEl(awesome_adj) + ". #fullstacklove #codedreams";
 };
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 50; i++) {
   module.exports.add( getFakeName(), getFakeTweet() );
 }
