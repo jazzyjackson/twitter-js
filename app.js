@@ -18,9 +18,14 @@ app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 
 app.use(volleyball);
-app.use('/', routes(io));
+app.use(routes(io));
+
 app.use(express.static('public'));
 
+app.use(function(err,req,res, next){
+  console.log(err);
+  res.sendStatus(400);
+})
 
 
 //
